@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Stephen Wang's Blog</title>
+<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://veetase.github.io/blog/feed.xml" />
+<link rel="alternate" type="text/html" href="http://veetase.github.io/blog" />
+<updated>2014-05-19T06:47:14+00:00</updated>
+<id>http://veetase.github.io/blog/</id>
+<author>
+  <name>Stephen Wang</name>
+  <uri>http://veetase.github.io/blog/</uri>
+  <email>734569969@qq.com</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[Scrash Sublime-Text3 On Ubuntu]]></title>
+ <link rel="alternate" type="text/html" href="http://veetase.github.io/blog/tools/scrash-sublime-text-3-on-ubuntu/" />
+  <id>http://veetase.github.io/blog/tools/scrash-sublime-text-3-on-ubuntu</id>
+  <published>2014-05-19T14:19:11Z</published>
+  <updated>2014-05-19T14:19:11Z</updated>
+  <author>
+    <name>Stephen Wang</name>
+    <uri>http://veetase.github.io/blog</uri>
+    <email>734569969@qq.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Edit the sublime.exe in /opt/sublime with bless:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt;   
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://veetase.github.io/blog/tools/scrash-sublime-text-3-on-ubuntu/&quot;&gt;Scrash Sublime-Text3 On Ubuntu&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://veetase.github.io/blog&quot;&gt;Stephen Wang's Blog&lt;/a&gt; on May 19, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Why and how I migrated from Wordpress to Jekyll]]></title>
+ <link rel="alternate" type="text/html" href="http://veetase.github.io/blog/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/" />
+  <id>http://veetase.github.io/blog/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll</id>
+  <published>2014-04-23T17:46:11Z</published>
+  <updated>2014-04-23T17:46:11Z</updated>
+  <author>
+    <name>Stephen Wang</name>
+    <uri>http://veetase.github.io/blog</uri>
+    <email>734569969@qq.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Since I started writing this blog I’ve always used &lt;a href=&quot;http://wordpress.org/&quot; target=&quot;_blank&quot;&gt;Wordpress&lt;/a&gt; and it’s great, but the need to update Wordpress and its plug ins (a lot of them) always annoyed me.&lt;/p&gt;
+
+&lt;p&gt;Even I don’t have much more time to write here I always wanted to write again. After I decided to write back, I also decided to improve my blog, with a new theme and a better and fun way to write posts.&lt;/p&gt;
+
+&lt;h4 id=&quot;my-choice-and-why&quot;&gt;My choice and why&lt;/h4&gt;
+&lt;p&gt;I chose to migrate this blog from Wordpress to &lt;a href=&quot;http://jekyllrb.org/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt;. But why Jekyll?&lt;/p&gt;
+
+&lt;p&gt;Unlike Wordpress, Jekyll isn’t a full CMS, it’s a lot simpler, I can have a static site that is a lot lighter than Wordpress and mainly I just wanted to learn a new tool.&lt;/p&gt;
+
+&lt;p&gt;More reasons why I choose Jekyll were:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s in Ruby :)&lt;/li&gt;
+  &lt;li&gt;It uses &lt;a href=&quot;http://liquidmarkup.org&quot; taget=&quot;_blank&quot;&gt;liquid&lt;/a&gt; for the templating&lt;/li&gt;
+  &lt;li&gt;I can use git for the versioning of both code and posts&lt;/li&gt;
+  &lt;li&gt;Posts can be written in Markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;select-a-theme&quot;&gt;Select a theme&lt;/h4&gt;
+&lt;p&gt;I found the &lt;a href=&quot;https://github.com/mmistakes/hpstr-jekyll-theme&quot; target=&quot;_blank&quot;&gt;hpstr-jekyll-theme&lt;/a&gt; for Jekyll. so I decided to use it as a base for my own new theme.
+ Here is the post tell how to use it : &lt;a href=&quot;http://mmistakes.github.io/hpstr-jekyll-theme/&quot;&gt;http://mmistakes.github.io/hpstr-jekyll-theme/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;hosting-on-github-pages&quot;&gt;Hosting on Github Pages&lt;/h4&gt;
+&lt;p&gt;Well, hosting static content in &lt;a href=&quot;http://pages.github.com&quot; target=&quot;_blank&quot;&gt;Github Pages&lt;/a&gt; is a piece of cake and it’s completely free.
+I just had to create a new repository there and send (git push) my files to it. It’s super easy! :)&lt;/p&gt;
+
+&lt;p&gt;I’ve used the pages below to understand how to use Jekyll with Github Pages and how to set up my own domain.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot; target=&quot;_blank&quot;&gt;Using Jekyll with Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot; target=&quot;_blank&quot;&gt;Setting up a custom domain with Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://veetase.github.io/blog/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/&quot;&gt;Why and how I migrated from Wordpress to Jekyll&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://veetase.github.io/blog&quot;&gt;Stephen Wang's Blog&lt;/a&gt; on April 23, 2014.&lt;/p&gt;</content>
+</entry>
+
+</feed>

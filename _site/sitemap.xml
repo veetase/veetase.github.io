@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://veetase.github.io/blog</loc>
+    </url>
+    
+    
+    <url>
+        <loc>http://veetase.github.io/blog/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/posts/</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/404.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/tags/</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/about/</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/feed.xml</loc>
+    </url>
+    
+
+    
+    <url>
+        <loc>http://veetase.github.io/blog/tools/scrash-sublime-text-3-on-ubuntu/</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/blog/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/</loc>
+    </url>
+    
+</urlset>
