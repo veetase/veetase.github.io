@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://veetase.github.io/blog</loc>
+        <loc>http://veetase.github.io</loc>
     </url>
     
     
     <url>
-        <loc>http://veetase.github.io/blog/index.html</loc>
+        <loc>http://veetase.github.io/index.html</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/posts/</loc>
+        <loc>http://veetase.github.io/posts/</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/404.html</loc>
+        <loc>http://veetase.github.io/404.html</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/sitemap.xml</loc>
+        <loc>http://veetase.github.io/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/tags/</loc>
+        <loc>http://veetase.github.io/tags/</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/about/</loc>
+        <loc>http://veetase.github.io/about/</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/feed.xml</loc>
+        <loc>http://veetase.github.io/feed.xml</loc>
     </url>
     
 
     
     <url>
-        <loc>http://veetase.github.io/blog/tools/scrash-sublime-text-3-on-ubuntu/</loc>
+        <loc>http://veetase.github.io/web/rails-single-table-inheritance/</loc>
     </url>
     
     <url>
-        <loc>http://veetase.github.io/blog/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/</loc>
+        <loc>http://veetase.github.io/tools/scrash-sublime-text-3-on-ubuntu/</loc>
+    </url>
+    
+    <url>
+        <loc>http://veetase.github.io/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/</loc>
     </url>
     
 </urlset>
