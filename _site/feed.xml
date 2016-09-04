@@ -1,27 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">Stephen Wang's Blog</title>
+<title type="text">Veetase</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://veetase.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="http://veetase.github.io" />
-<updated>2014-06-20T10:52:15+00:00</updated>
-<id>http://veetase.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2016-09-04T10:47:20+00:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Stephen Wang</name>
-  <uri>http://veetase.github.io/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>734569969@qq.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Meteor初入门]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/Meteor%E5%88%9D%E5%85%A5%E9%97%A8/" />
+  <id>http://localhost:4000/Meteor初入门</id>
+  <published>2016-05-14T19:04:00+00:00</published>
+  <updated>2016-05-14T19:04:00+00:00</updated>
+  <author>
+    <name>Stephen Wang</name>
+    <uri>http://localhost:4000</uri>
+    <email>734569969@qq.com</email>
+  </author>
+  <content type="html">&lt;p&gt;几个星期前接手了一个小项目，恰逢Meteor在Github上的star数量超过Rails，便怀着一种好奇的心态去尝试了下。刚上手的几天各种新潮概念扑面而来，不得不说Meteor在很多想法上的尝试非常大胆，很多优点非常激动人心，其中包含但不仅限于：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;敏捷的开发速度&lt;/li&gt;
+  &lt;li&gt;服务端和客户端共用一种编程语言&lt;/li&gt;
+  &lt;li&gt;Realtime&lt;/li&gt;
+  &lt;li&gt;Full Stack Reactivity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这些都是非常了不起的特点，但是他们也不是想象中那么美好。接下来我们就来逐个的谈谈这些&lt;strong&gt;优点&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;敏捷的开发速度&lt;/h3&gt;
+&lt;p&gt;诚然，用Meteor搭建一个基础Demo项目只需要几个小时，然而这背后是牺牲了部分东西的。Meteor把编程模式严格的限定死了在DDP的模式之下，如果是一般的需求带来的收益无疑是巨大的，基于Pub／Sub的模式，本地有一个远程数据库的子集，客户端可以完全当成自己拥有了一切^^，正是如此也让服务器和客户端共用一套代码变得更加有意义。带来的弊端就是服务器和客户端被紧密的绑在了一起，这就使得不论是对服务器端的单独定制或者是对客户端和服务端的通讯过程定制变的困难，比如请求日志啊，单独的做一个API server啊。它甚至没有一套自己的Router，即使不用来做API server，在微服务越来越流行的当下，应用集成个微信支付，短信通知啥的也都是要跟第三方应用打交道的，这时候不得不借助一些如Picker，iron:router等工具，在这方面，Meteor跟Rails，Django差距一下就拉开了。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;服务端和客户单共用同一种编程语言&lt;/h3&gt;
+&lt;p&gt;不管在哪种平台，一种编程语言的应用一定是为了解决某种特定的需求，当它满足不了需求的时候与其花费大量时间去弥补不如换一种更加适合的工具。javascript的并不是最适合做服务器的语言，它即不是开发效率最高的也不是运行效率最高的。如果你的需求是处理高并发，可以去用Go，erlang，如果需求是敏捷开发可以选Ruby，Python，当然如果你的团队大多是前端程序员又对性能有一定要求，这个时候JS似乎才是不二选择。而这时候全栈都用JS编写只是选择便利而带来的结果。Meteor选择了JS，也就意味着它与高并发和良好的服务器生态环境无缘。&lt;/p&gt;
+
+&lt;h3 id=&quot;realtime&quot;&gt;Realtime&lt;/h3&gt;
+&lt;p&gt;随着时间的推进，越来越多的支持Websocket的web框架相继推出，如Sails.js, Phoenix, 就连老牌框架Rails在她的第五个大版本来临时也将带来这一特性，所以Meteor的这一优势已变得不那么明显。&lt;/p&gt;
+
+&lt;h3 id=&quot;full-stack-reactivity&quot;&gt;Full Stack Reactivity&lt;/h3&gt;
+&lt;p&gt;这同样是Meteor的一大亮点，我也非常喜欢。但是这一超前卫的想法也同样会有副作用。比如翻页，详情可参考 &lt;a href=&quot;https://www.discovermeteor.com/blog/pagination-problems-meteor/&quot;&gt;Pagination Problems in Meteor&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;Meteor在让一些功能变的简单的同时，也让原本简单的东西变的复杂。它还很年轻，生态也没那么丰富，但我还是庆幸认识了它，期待它会在之后的日子里大放异彩。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/Meteor%E5%88%9D%E5%85%A5%E9%97%A8/&quot;&gt;Meteor初入门&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://localhost:4000&quot;&gt;Veetase&lt;/a&gt; on May 14, 2016.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[重新认识javascript原型链]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/javascript-prototype-chain/" />
+  <id>http://localhost:4000/javascript-prototype-chain</id>
+  <published>2015-08-02T15:54:11Z</published>
+  <updated>2015-08-02T15:54:11Z</updated>
+  <author>
+    <name>Stephen Wang</name>
+    <uri>http://localhost:4000</uri>
+    <email>734569969@qq.com</email>
+  </author>
+  <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;刚接触javascript的时候，只是临时用来在网页上写点小程序，看上两眼就开始用，认为javacript连类都没有，那平时见到的String，Array之流是什么鬼？没有类如何敢声称自己是一门面向对象语言呢？最近有幸拜读了大师Nicholas C. Zakes的《Principles of Object-Oriented Programming in JavaScript》才彻底解开了心中的疑惑。继承作为面向对象最重要的特点之一，本文就试图从解释javascript如何用原型链实现继承来剖析javascript。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题一&lt;/h2&gt;
+
+&lt;p&gt;既然是面向对象语言，那么javascript中的对象是什么呢？在javascript中，对象指由若干个键值对组成的集合，每个键就是对象的property，值就是property的值。如果值是function，那这个function被称为这个对象的方法。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;问题二&lt;/h2&gt;
+&lt;p&gt;知道了什么是对象，如何产生一个对象呢？
+产生一个对象的方式有两种，第一种是字面量的方式。以下用字面量的方式创建一个鸭子对象。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; 	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;duck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; 		&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;小黄鸭&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; 		&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Yellow&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt; 		&lt;span class=&quot;nx&quot;&gt;speak&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; 			&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;gagaga&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt; 		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; 	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;字面量的方式完全吻合对象的定义，就是一系列的键值对。但是这种方式虽然简单直白，却不能复用，每次都要这么定义一通。若在其它语言里，先定义一个类，每次只要new＋类名，就会得到这个类的实例对象，javascript中虽然没有类，却有类似的东西。名曰：constructor。可以把constructor看成是其它变成语言的初始化函数，它本身就是个function，专门用来生产对象，跟其它普通function不同的是首字母大写（便于区分），其它并没有什么不同。有了constructor就能用它来创建长的一毛一样的对象了。平时我们见到的String，Function就是constructor啦。以下为用constructor的方式创建多个鸭子对象。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; 	&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; 		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; 		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt; 	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt; 	&lt;span class=&quot;nx&quot;&gt;duck1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;pony&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;yellow&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; 	&lt;span class=&quot;nx&quot;&gt;duck2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Duck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Tom&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Red&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以上先定义了一个constructor，然后用这个constructor分别创建了两个鸭子对象。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;问题三&lt;/h2&gt;
+&lt;p&gt;那么如何实现对象的继承呢。
+有了前面的constructor，习惯了其它面向对象的用法，如果是constructor去继承另一个constructor想必很好理解，然而事实并不是这样，对象是通过prototype来继承的。可以把constructor想象成鸭子它妈，一个鸭妈妈可以生产出多个小鸭子，这些小鸭子都有自己的小胳膊小腿儿（ownproperty），但是这个鸭妈妈比较懒，只负责生孩子，不负责教育。孩子不能从鸭妈妈这里继承到其它东西，于是鸭爸爸站了出来，这位伟大的鸭爸爸名曰：prototype。&lt;/p&gt;
+
+&lt;p&gt;在用constructor创建对象的时候，constructor会把自己的prototype property给每一个对象作为它的prototype property。这相当于每次生孩子的时候，这位懒妈妈就对这个孩子说，那个是你亲爹，以后要学费继承财产什么的找你爹，别找我。（请忽略创建出来的对象跟constructor共用一个prototype这个在现实社会有违伦理的事情）。&lt;/p&gt;
+
+&lt;p&gt;跟妈给的东西（own property）不同，每个妈给的胳膊腿儿，每个小鸭子都有自己单独的拥有的。继承自爹的property却是公用的，比如说语言，他们都是用的他爹教给他们的同一种语言，鸭语。他们的房子也是他们爹的房子给他们公用。所以有了prototype，能节省很多不必要资源。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;三者之间的关系&lt;/h2&gt;
+&lt;p&gt;现在对象也有了, 继承问题也理清了，但总体他们三者又是什么关系呢，孩子将来跟谁姓呀？从上面大家也可以看出来，鸭妈妈这么懒，除了吃喝生孩子什么事都不干，显然这是母系社会，小鸭子将来注定要跟娘姓。也就是说每个对象的instanceof是constructor的名字。最悲催的是，鸭妈妈只负责生，连孩子姓什么，也是鸭爸爸告诉他们的，男人就是命苦啊。
+如下图：
+&lt;img src=&quot;http://localhost:4000/images/relation.jpg&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;											鸣谢：Nicholas C. Zakes，闻端
+&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/javascript-prototype-chain/&quot;&gt;重新认识javascript原型链&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://localhost:4000&quot;&gt;Veetase&lt;/a&gt; on August 02, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Rails Single Table Inheritance]]></title>
- <link rel="alternate" type="text/html" href="http://veetase.github.io/web/rails-single-table-inheritance/" />
-  <id>http://veetase.github.io/web/rails-single-table-inheritance</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/web/rails-single-table-inheritance/" />
+  <id>http://localhost:4000/web/rails-single-table-inheritance</id>
   <published>2014-06-20T18:28:11Z</published>
   <updated>2014-06-20T18:28:11Z</updated>
   <author>
     <name>Stephen Wang</name>
-    <uri>http://veetase.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>734569969@qq.com</email>
   </author>
   <content type="html">&lt;hr /&gt;
@@ -238,19 +344,19 @@ Index erb：&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://veetase.github.io/web/rails-single-table-inheritance/&quot;&gt;Rails Single Table Inheritance&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://veetase.github.io&quot;&gt;Stephen Wang's Blog&lt;/a&gt; on June 20, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/web/rails-single-table-inheritance/&quot;&gt;Rails Single Table Inheritance&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://localhost:4000&quot;&gt;Veetase&lt;/a&gt; on June 20, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Scrash Sublime-Text3 On Ubuntu]]></title>
- <link rel="alternate" type="text/html" href="http://veetase.github.io/tools/scrash-sublime-text-3-on-ubuntu/" />
-  <id>http://veetase.github.io/tools/scrash-sublime-text-3-on-ubuntu</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/tools/scrash-sublime-text-3-on-ubuntu/" />
+  <id>http://localhost:4000/tools/scrash-sublime-text-3-on-ubuntu</id>
   <published>2014-05-19T14:19:11Z</published>
   <updated>2014-05-19T14:19:11Z</updated>
   <author>
     <name>Stephen Wang</name>
-    <uri>http://veetase.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>734569969@qq.com</email>
   </author>
   <content type="html">&lt;p&gt;Edit the sublime in /opt/sublime with bless:&lt;/p&gt;
@@ -269,19 +375,19 @@ Index erb：&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://veetase.github.io/tools/scrash-sublime-text-3-on-ubuntu/&quot;&gt;Scrash Sublime-Text3 On Ubuntu&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://veetase.github.io&quot;&gt;Stephen Wang's Blog&lt;/a&gt; on May 19, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/tools/scrash-sublime-text-3-on-ubuntu/&quot;&gt;Scrash Sublime-Text3 On Ubuntu&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://localhost:4000&quot;&gt;Veetase&lt;/a&gt; on May 19, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Why and how I migrated from Wordpress to Jekyll]]></title>
- <link rel="alternate" type="text/html" href="http://veetase.github.io/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/" />
-  <id>http://veetase.github.io/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/" />
+  <id>http://localhost:4000/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll</id>
   <published>2014-04-23T17:46:11Z</published>
   <updated>2014-04-23T17:46:11Z</updated>
   <author>
     <name>Stephen Wang</name>
-    <uri>http://veetase.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>734569969@qq.com</email>
   </author>
   <content type="html">&lt;p&gt;Since I started writing this blog I’ve always used &lt;a href=&quot;http://wordpress.org/&quot; target=&quot;_blank&quot;&gt;Wordpress&lt;/a&gt; and it’s great, but the need to update Wordpress and its plug ins (a lot of them) always annoyed me.&lt;/p&gt;
@@ -318,7 +424,7 @@ I just had to create a new repository there and send (git push) my files to it. 
 &lt;/ul&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://veetase.github.io/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/&quot;&gt;Why and how I migrated from Wordpress to Jekyll&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://veetase.github.io&quot;&gt;Stephen Wang's Blog&lt;/a&gt; on April 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/jekyll/ruby/github/why-and-how-i-migrated-from-wordpress-to-jekyll/&quot;&gt;Why and how I migrated from Wordpress to Jekyll&lt;/a&gt; was originally published by Stephen Wang at &lt;a href=&quot;http://localhost:4000&quot;&gt;Veetase&lt;/a&gt; on April 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

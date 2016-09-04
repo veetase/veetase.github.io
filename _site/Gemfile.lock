@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     activesupport (4.0.2)
       i18n (~> 0.6, >= 0.6.4)
@@ -76,3 +76,6 @@ DEPENDENCIES
   rake
   stringex
   thor
+
+BUNDLED WITH
+   1.12.5
