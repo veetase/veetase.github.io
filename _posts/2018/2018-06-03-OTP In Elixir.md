@@ -20,6 +20,18 @@ Elixir的诞生让OTP不在是Erlang的专属，虽然Elixir也是会被编译�
 
 **OTP就是管理Process的工具**
 
+通常我们说OTP就是指erlang虚拟机下管理process的一系列工具。
+
+- GenServer 一个cs模型中server端的实现，一般用来维护状态或者执行异步任务
+- Supervisor 管理process，一般以树的结构被使用
+- Task
+- Agent
+- GenEvent
+- GenTCP
+- GenStage
+
+Gen是Generic的意思，相比自己实现这些工具，Generic Behavior通常更加专业和可靠，因为这些都是几十年来在erlang社区不断被测试和完善的。
+
 
 
 
