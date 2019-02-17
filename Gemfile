@@ -1,6 +1,6 @@
-source 'https://ruby.taobao.org/'
-
+source 'https://rubygems.org'
 gem 'jekyll'
+gem 'jekyll-remote-theme'
 gem 'kramdown'
 gem 'coderay'
 gem 'rake'

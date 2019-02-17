@@ -64,4 +64,4 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 plugins:
   - jekyll-remote-theme
-remote_theme: andrewbanchich/forty-jekyll-theme
+remote_theme: kronik3r/daktilo

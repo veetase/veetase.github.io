@@ -1,130 +1,72 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-<meta charset="utf-8">
-<title>重新认识javascript原型链 &#8211; Stephen Wang's Blog</title>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> 重新认识javascript原型链 —  &raquo;  Stephen Wang's Blog</title>
 <meta name="description" content="my personal blog">
 <meta name="keywords" content="javascript">
+<link rel="canonical" href="http://localhost:4000/javascript-prototype-chain/">
+        
+
+
+
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://localhost:4000/images/">
-<meta name="twitter:title" content="重新认识javascript原型链">
-<meta name="twitter:description" content="my personal blog">
-<meta name="twitter:creator" content="@veetase">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="重新认识javascript原型链" />
+<meta name="twitter:description" content="my personal blog" />
+<meta name="twitter:image" content="http://localhost:4000" />
+
+<!-- Google plus -->
+<meta name="author" content="">
+<link rel="author" href="">
 
 <!-- Open Graph -->
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重新认识javascript原型链">
 <meta property="og:description" content="my personal blog">
 <meta property="og:url" content="http://localhost:4000/javascript-prototype-chain/">
 <meta property="og:site_name" content="Stephen Wang's Blog">
 
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/css/main.css">
 
+  <link rel="stylesheet" href="/assets/vendor/highlight/styles/solarized_dark.css">
 
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css">
 
+    </head>
 
-<link rel="canonical" href="http://localhost:4000/javascript-prototype-chain/">
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Stephen Wang's Blog Feed">
+    <body>
+        <div class="wrapper">
+            <header class="header">
+    <div class="navigation">
+        <a href="/" class="logo">Stephen Wang's Blog</a>
 
+        <ul class="menu">
+            <li class="menu__entry"><a href="/about">About</a></li>
+            <li class="menu__entry"><a href="/">Blog</a></li>
+        </ul>
+    </div>
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
-<!-- Webfonts -->
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
-
-
-
-</head>
-
-<body id="post" >
-
-<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
-<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
-	<button class="dl-trigger">Open Menu</button>
-	<ul class="dl-menu">
-		<li><a href="http://localhost:4000">Home</a></li>
-		<li>
-			<a href="#">About</a>
-			<ul class="dl-submenu">
-				<li>
-					<img src="http://veeta.u.qiniudn.com/WP_20130801_002.jpg" alt="Stephen Wang photo" class="author-photo" width="150px" height="75px">
-					<h4>Stephen Wang</h4>
-					<p>A software developer working on Ruby on Rails Java Javascript</p>
-				</li>
-				<li><a href="http://localhost:4000/about/">Learn More</a></li>
-				<li>
-					<a href="mailto:734569969@qq.com"><i class="icon-envelope"></i> Email</a>
-				</li>
-				<li>
-					<a href="http://twitter.com/veetase"><i class="icon-twitter"></i> Twitter</a>
-				</li>
-				
-				
-				
-				<li>
-					<a href="http://github.com/veetase"><i class="icon-github"></i> GitHub</a>
-				</li>
-				
-				
-				
-				
-			</ul><!-- /.dl-submenu -->
-		</li>
-		<li>
-			<a href="#">Posts</a>
-			<ul class="dl-submenu">
-				<li><a href="http://localhost:4000/posts/">All Posts</a></li>
-				<li><a href="http://localhost:4000/tags/">All Tags</a></li>
-			</ul>
-		</li>
-		
-	</ul><!-- /.dl-menu -->
-</nav><!-- /.dl-menuwrapper -->
-
-
-
-
-<div id="main" role="main">
-  <article class="hentry">
-    <header class="header-title">
-      <div class="header-title-wrap">
+    <ul class="social-links">
         
-          <h1 class="entry-title"><a href="http://localhost:4000/javascript-prototype-chain/" rel="bookmark" title="重新认识javascript原型链">重新认识javascript原型链</a></h1>
+
         
-        <h2>August 02, 2015</h2>
-      </div><!-- /.header-title-wrap -->
-    </header>
-    <div class="entry-content">
-      <hr />
+    </ul>
+</header>
+
+            <h1 class="page-title post-title">
+    <div class="page-title__text post-title__text">重新认识javascript原型链</div>
+    <div class="page-title__subtitle post-title__subtitle"></div>
+</h1>
+
+<div class="content">
+    <hr />
 
 <p>刚接触javascript的时候，只是临时用来在网页上写点小程序，看上两眼就开始用，认为javacript连类都没有，那平时见到的String，Array之流是什么鬼？没有类如何敢声称自己是一门面向对象语言呢？最近有幸拜读了大师Nicholas C. Zakes的《Principles of Object-Oriented Programming in JavaScript》才彻底解开了心中的疑惑。继承作为面向对象最重要的特点之一，本文就试图从解释javascript如何用原型链实现继承来剖析javascript。</p>
 
@@ -186,87 +128,31 @@
 <pre><code>											鸣谢：Nicholas C. Zakes，闻端
 </code></pre>
 
-      <footer class="entry-meta">
-        <span class="entry-tags"><a href="http://localhost:4000/tags/#javascript" title="Pages tagged javascript" class="tag">javascript</a></span>
-        <span><a href="http://localhost:4000/javascript-prototype-chain/" rel="bookmark" title="重新认识javascript原型链">重新认识javascript原型链</a> was published on <span class="entry-date date published updated"><time datetime="2015-08-02T15:54:11+00:00">August 02, 2015</time></span></span>
+</div>
+
+<div class="about">
+    <div class="about__devider">*****</div>
+    <div class="about__text">
+        Written by <strong>   </strong>
+        on <strong>02 August 2015</strong>
+    </div>
+</div>
+
+
+        </div>
+
+        <script src="/assets/vendor/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
         
-        <span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About Stephen Wang">Stephen Wang</a></span></span>
-        
-      </footer>
-    </div><!-- /.entry-content -->
-    <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    
-    <div class="read-more">
-      
-        <div class="read-more-header">
-          <a href="http://localhost:4000/web/rails-single-table-inheritance/" class="read-more-btn">Read More</a>
-        </div><!-- /.read-more-header -->
-        <div class="read-more-content">
-          <h3><a href="http://localhost:4000/Meteor%E5%88%9D%E5%85%A5%E9%97%A8/" title="Meteor初入门">Meteor初入门</a></h3>
-          <p>几个星期前接手了一个小项目，恰逢Meteor在Github上的star数量超过Rails，便怀着一种好奇的心态去尝试了下。刚上手的几天各种新潮概念扑面而来，不得不说Meteor在很多想法上的尝试非常大胆，很多优点非常激动人心，其中包含但不仅限于：* 敏捷的开发速度* 服务端...&hellip; <a href="http://localhost:4000/Meteor%E5%88%9D%E5%85%A5%E9%97%A8/">Continue reading</a></p>
-        </div><!-- /.read-more-content -->
-      
-      <div class="read-more-list">
-        
-          <div class="list-item">
-            <h4><a href="http://localhost:4000/web/rails-single-table-inheritance/" title="Rails Single Table Inheritance">Rails Single Table Inheritance</a></h4>
-            <span>Published on June 20, 2014</span>
-          </div><!-- /.list-item -->
-        
-          <div class="list-item">
-            <h4><a href="http://localhost:4000/tools/scrash-sublime-text-3-on-ubuntu/" title="Scrash Sublime-Text3 On Ubuntu">Scrash Sublime-Text3 On Ubuntu</a></h4>
-            <span>Published on May 19, 2014</span>
-          </div><!-- /.list-item -->
-        
-      </div><!-- /.read-more-list -->
-      
-    </div><!-- /.read-more -->
-  </article>
-</div><!-- /#main -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<div class="footer-wrapper">
-  <footer role="contentinfo">
-    <span>&copy; 2017 Stephen Wang. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a>.</span>
-  </footer>
-</div><!-- /.footer-wrapper -->
+      ga('create', 'UA-50394032-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
-
-<!-- Asynchronous Google Analytics snippet -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-50394032-1', 'auto');  
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
-</script>
-
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'veetase'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-</body>
+    </body>
 </html>
