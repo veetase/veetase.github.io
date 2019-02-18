@@ -15,7 +15,7 @@ owner:
   facebook:
   github: veetase
   stackexchange:
-  linkedin:
+  linkedin: veetase
   instagram:
   flickr:
   tumblr:
@@ -61,7 +61,3 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
-
-plugins:
-  - jekyll-remote-theme
-remote_theme: kronik3r/daktilo
